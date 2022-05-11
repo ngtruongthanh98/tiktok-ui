@@ -1,0 +1,52 @@
+.wrapper {
+  min-width: 100px;
+  padding: 9px 16px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: var(--white);
+
+  + .wrapper {
+    margin-left: 8px;
+  }
+}
+
+// Button styles
+.primary {
+  background-color: var(--primary);
+  color: var(--white);
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), var(--primary);
+  }
+}
+
+.outline {
+  color: var(--primary);
+  border-color: currentColor;
+
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+  }
+}
+
+.text {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+//  Disabled
+
+// Button sizes
+.small {
+  min-width: 88px;
+  padding: 4px 16px;
+}
+
+.large {
+  min-width: 140px;
+  padding: 14px 16px;
+}
