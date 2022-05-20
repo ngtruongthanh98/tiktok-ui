@@ -9,7 +9,6 @@ import {
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
   faUser,
   faCoins,
   faGear,
@@ -26,6 +25,8 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -147,7 +148,19 @@ const Header = () => {
             <>
               <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
+                </button>
+              </Tippy>
+
+              <Tippy delay={[0, 200]} content="Message" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <MessageIcon />
+                </button>
+              </Tippy>
+
+              <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -159,7 +172,7 @@ const Header = () => {
           )}
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 alt="User Avatar"
                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5c49c809d39a68c35e6e6a9ed9d3316~c5_100x100.jpeg?x-expires=1653202800&x-signature=HevtWavODk8ZODruHrs5Y9t%2BTAc%3D"

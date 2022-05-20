@@ -111,6 +111,8 @@
 }
 
 .action-btn {
+  display: flex;
+  align-items: center;
   font-size: 2.2rem;
   color: rgba(22, 24, 35, 1);
   background-color: transparent;
