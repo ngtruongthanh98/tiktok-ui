@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 import styles from "./AccountItem.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -8,21 +9,17 @@ import Image from "../Image";
 
 const cx = classNames.bind(styles);
 
-const AccountItem = () => {
+const AccountItem = ({ data }) => {
   return (
-    <div className={cx("wrapper")}>
-      <Image
-        className={cx("avatar")}
-        src="https://s1.tvp.pl/images2/1/1/5/uid_115c2b97c89ffd3d9edd03ecc82d8c2b1648973360188_width_1280_play_0_pos_0_gs_0_height_720_karim-benzema-fot-getty-images.jpg"
-        alt="Avatar"
-      />
+    <Link className={cx("wrapper")} to={`/@${data.nickname}`}>
+      <Image className={cx("avatar")} src={data.avatar} alt={data.full_name} />
       <div className={cx("info")}>
         <h4 className={cx("name")}>
-          <span>Real Madrid</span> <FontAwesomeIcon className={cx("check")} icon={faCheckCircle} />
+          <span>{data.full_name}</span> {data.tick && <FontAwesomeIcon className={cx("check")} icon={faCheckCircle} />}
         </h4>
-        <span className={cx("username")}>realmadrid</span>
+        <span className={cx("username")}>{data.nickname}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 
